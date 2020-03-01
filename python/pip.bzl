@@ -37,9 +37,8 @@ def _pip_import_impl(repository_ctx):
 pip_import = repository_rule(
     attrs = {
         "requirements": attr.label(
-            allow_files = True,
             mandatory = True,
-            single_file = True,
+            allow_single_file = True,
         ),
         "timeout": attr.int(
             default = 600,
